@@ -1,6 +1,7 @@
 package rolli.Car_Tracker.entity;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class Car {
 
@@ -10,7 +11,17 @@ public class Car {
 	int year;
 	int redlineRpm;
 	int maxFuelVolume;
-	Date lastServiceDate;
+//	Date lastServiceDate;
+
+	public Car(String vin, String make, String model, int year, int redlineRpm, int maxFuelVolume) {
+		this.vin = UUID.randomUUID().toString();
+		this.make = make;
+		this.model = model;
+		this.year = year;
+		this.redlineRpm = redlineRpm;
+		this.maxFuelVolume = maxFuelVolume;
+//		this.lastServiceDate = lastServiceDate;
+	}
 
 	public String getVin() {
 		return vin;
@@ -60,18 +71,18 @@ public class Car {
 		this.maxFuelVolume = maxFuelVolume;
 	}
 
-	public Date getLastServiceDate() {
-		return lastServiceDate;
-	}
-
-	public void setLastServiceDate(Date lastServiceDate) {
-		this.lastServiceDate = lastServiceDate;
-	}
+//	public Date getLastServiceDate() {
+//		return lastServiceDate;
+//	}
+//
+//	public void setLastServiceDate(Date lastServiceDate) {
+//		this.lastServiceDate = lastServiceDate;
+//	}
 
 	@Override
 	public String toString() {
 		return "Vehicle{" + "vin='" + vin + '\'' + ", make='" + make + '\'' + ", model='" + model + '\'' + ", year="
 				+ year + ", redLineRpm=" + redlineRpm + ", maxFuelVolume=" + maxFuelVolume + ", lastServiceDate='"
-				+ lastServiceDate + '\'' + '}';
+				+  + '\'' + '}';
 	}
 }

@@ -1,6 +1,7 @@
 package rolli.Car_Tracker.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +26,7 @@ public class CarController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "{id}")
-	public Car findOne(@PathVariable("id") String id) {
-		return service.findOne(id);
+	public Optional<Car> findOne(@PathVariable("id") String id) {
+		return service.findById(id);
 	}
 }

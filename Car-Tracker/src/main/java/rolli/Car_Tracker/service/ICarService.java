@@ -1,6 +1,7 @@
 package rolli.Car_Tracker.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import rolli.Car_Tracker.entity.Car;
 
@@ -8,6 +9,6 @@ public interface ICarService {
 
 	List<Car> findAll();
 
-	Car findOne(String id);
+	Optional<Car> findById(String id);
 
 }
