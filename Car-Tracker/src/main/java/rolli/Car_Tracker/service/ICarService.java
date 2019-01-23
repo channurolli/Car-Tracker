@@ -10,9 +10,9 @@ public interface ICarService {
 
 	Car findOne(String id);
 
-	Car create(Car emp);
+	Car create(Car car);
 
-	Car update(String id, Car emp);
+	Car update(String id, Car car);
 
 	void delete(String id);
 

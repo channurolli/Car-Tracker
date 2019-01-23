@@ -10,8 +10,3 @@ public interface ICarRepository extends CrudRepository<Car, String> {
 	Optional<Car> findByModel(String email);
 }
 
-//public interface ICarRepository {
-//	List<Car> findAll();
-//
-//	Optional<Car> findById(String id);
-//}

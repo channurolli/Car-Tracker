@@ -20,26 +20,33 @@ public class CarController {
 	@Autowired
 	ICarService service;
 
-	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+//	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(method = RequestMethod.GET)
 	public List<Car> findAll() {
 		return service.findAll();
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public Car findOne(@PathVariable("id") String empId) {
-		return service.findOne(empId);
+//	@RequestMapping(method = RequestMethod.GET, value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(method = RequestMethod.GET, value = "/{id}")
+	public Car findOne(@PathVariable("id") String id) {
+		return service.findOne(id);
 	}
 
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public Car create(@RequestBody Car emp) {
-		return service.create(emp);
+	// @RequestMapping(method = RequestMethod.POST, consumes =
+	// MediaType.APPLICATION_JSON_UTF8_VALUE, produces =
+	// MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(method = RequestMethod.POST)
+	public Car create(@RequestBody Car car) {
+		return service.create(car);
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, value = "/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public Car update(@PathVariable("id") String empId, @RequestBody Car emp) {
-		return service.update(empId, emp);
+//	@RequestMapping(method = RequestMethod.PUT, value = "/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(method = RequestMethod.PUT, value = "/{id}")
+	public Car update(@PathVariable("id") String id, @RequestBody Car car) {
+		return service.update(id, car);
 	}
 
+//	@RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
 	public void delete(@PathVariable("id") String id) {
 		service.delete(id);

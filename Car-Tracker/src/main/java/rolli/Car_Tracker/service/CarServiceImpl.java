@@ -42,12 +42,12 @@ public class CarServiceImpl implements ICarService {
 	}
 
 	@Transactional
-	public Car update(String id, Car emp) {
+	public Car update(String id, Car car) {
 		Optional<Car> existing = repository.findById(id);
 		if (!existing.isPresent()) {
 			throw new ResourceNotFoundException("Car with id " + id + " doesn't exist.");
 		}
-		return repository.save(emp);
+		return repository.save(car);
 	}
 
 	@Transactional

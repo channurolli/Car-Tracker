@@ -1,6 +1,5 @@
 package rolli.Car_Tracker.entity;
 
-import java.util.Date;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -16,9 +15,12 @@ public class Car {
 	String make;
 	String model;
 	int year;
-	int redlineRpm;
-	int maxFuelVolume;
-	Date lastServiceDate;
+//	int redlineRpm;
+//	int maxFuelVolume;
+	// Date lastServiceDate;
+
+	public Car() {
+	};
 
 	public Car(String vin) {
 		this.vin = UUID.randomUUID().toString();
@@ -56,34 +58,36 @@ public class Car {
 		this.year = year;
 	}
 
-	public int getRedlineRpm() {
-		return redlineRpm;
-	}
+//	public int getRedlineRpm() {
+//		return redlineRpm;
+//	}
+//
+//	public void setRedlineRpm(int redLineRpm) {
+//		this.redlineRpm = redLineRpm;
+//	}
 
-	public void setRedlineRpm(int redLineRpm) {
-		this.redlineRpm = redLineRpm;
-	}
+//	public int getMaxFuelVolume() {
+//		return maxFuelVolume;
+//	}
+//
+//	public void setMaxFuelVolume(int maxFuelVolume) {
+//		this.maxFuelVolume = maxFuelVolume;
+//	}
 
-	public int getMaxFuelVolume() {
-		return maxFuelVolume;
-	}
-
-	public void setMaxFuelVolume(int maxFuelVolume) {
-		this.maxFuelVolume = maxFuelVolume;
-	}
-
-	public Date getLastServiceDate() {
-		return lastServiceDate;
-	}
-
-	public void setLastServiceDate(Date lastServiceDate) {
-		this.lastServiceDate = lastServiceDate;
-	}
+//	public Date getLastServiceDate() {
+//		return lastServiceDate;
+//	}
+//
+//	public void setLastServiceDate(Date lastServiceDate) {
+//		this.lastServiceDate = lastServiceDate;
+//	}
 
 	@Override
 	public String toString() {
+//		return "Vehicle{" + "vin='" + vin + '\'' + ", make='" + make + '\'' + ", model='" + model + '\'' + ", year="
+//				+ year + ", redLineRpm=" + redlineRpm + ", maxFuelVolume=" + "" + ", lastServiceDate='"
+//				+  + '\'' + '}';
 		return "Vehicle{" + "vin='" + vin + '\'' + ", make='" + make + '\'' + ", model='" + model + '\'' + ", year="
-				+ year + ", redLineRpm=" + redlineRpm + ", maxFuelVolume=" + maxFuelVolume + ", lastServiceDate='"
-				+ lastServiceDate + '\'' + '}';
+				+ year + ", redLineRpm=" + +'\'' + '}';
 	}
 }
